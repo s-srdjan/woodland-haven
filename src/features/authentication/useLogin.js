@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { login as loginApi } from "../../services/apiAuth";
 import toast from "react-hot-toast";
 
-export async function useLogin() {
+export function useLogin() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -22,6 +22,6 @@ export async function useLogin() {
       toast.error("Provided email or password are incorrect");
     },
   });
-
+  
   return { login, isLoading };
 }
